@@ -103,9 +103,9 @@ Car.prototype.fill = function (gallons) {
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby(name, age, yourToy) {
+function Baby(name, age, babyToy) {
   Person.call(this, name, age);
-  this.favoriteToy = yourToy;
+  this.favoriteToy = babyToy;
 }
 Baby.prototype = Object.create(
   Person.prototype
@@ -119,12 +119,16 @@ Baby.prototype.play = function () {
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
-*/
+  1. Window Binding - is "this" default will happen if u put it in 
+  the global scope
 
+  2. Implicit Binding - it refers to the object that a function calls
+
+  3. "New" Binding - builds new objects
+  
+  4. Explicit Binding - Using Call and Apply makes 
+  an object get the properties of a parent.
+*/
 
 ///////// END OF CHALLENGE /////////
 ///////// END OF CHALLENGE /////////
