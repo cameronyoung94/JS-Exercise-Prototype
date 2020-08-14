@@ -103,17 +103,20 @@ Car.prototype.fill = function (gallons) {
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby(name, age, babyToy) {
-  Person.call(this, name, age);
-  this.favoriteToy = babyToy;
-}
-Baby.prototype = Object.create(
-  Person.prototype
-); 
-Baby.prototype.play = function () {
-  return `Playing with ${this.favoriteToy}`;
-};
+function Baby(name, age, favoriteToy) {
 
+  Person.call(name, age);
+  this.name = name;
+  this.age = age;
+  this.favoriteToy = favoriteToy;
+
+  Baby.prototype = Object.create(Person.prototype)
+
+  Baby.prototype.play = function () {
+    return `Playing with ${this.favoriteToy}`;
+    
+}
+};
 
 /* 
   TASK 4
@@ -127,7 +130,7 @@ Baby.prototype.play = function () {
   3. "New" Binding - builds new objects
   
   4. Explicit Binding - Using Call and Apply makes 
-  an object get the properties of a parent.
+  an object get the properties of a parent
 */
 
 ///////// END OF CHALLENGE /////////
